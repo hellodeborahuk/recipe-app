@@ -1,0 +1,27 @@
+.recipe {
+    border-radius: 14px;
+    box-shadow: 0px 5px 5px rgb(247 231 187,0.3);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: #FFFAEA;
+    width: 300px;
+}
+
+img {
+    border-radius: 14px;
+}
+
+h1 {
+    margin: 0; 
+    padding: 0 20px; 
+    color: #554E52;  
+}
+p {
+    margin: 0;
+    padding: 10px 0 20px 20px;
+    color: #554E52;     
+
+
+}

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
+import { FaSearch } from "react-icons/fa";
+
 
 const App = () => {
   const appId = "fff36917";
@@ -8,7 +10,7 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("chicken");
+  const [query, setQuery] = useState("egg");
 
   useEffect(() => {
     getRecipes();
@@ -35,27 +37,30 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Recipe Search</h1>
+      <h1 className="header">Recipe Search</h1>
       <form onSubmit={getSearch} className="search-form">
         <input
           type="text"
           className="search-bar"
           value={search}
           onChange={updateSearch}
+          placeholder="Search recipes"
         />
         <button type="submit" className="search-button">
-          Search
+          < FaSearch />
         </button>
       </form>
-      {recipes.map((recipe) => (
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-      ))}
+      <div className="recipes">
+        {recipes.map((recipe) => (
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            url={recipe.recipe.url}
+            source={recipe.recipe.source}
+          />
+        ))}
+      </div>
     </div>
   );
 };
