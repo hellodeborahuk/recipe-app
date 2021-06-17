@@ -12,9 +12,6 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("egg");
 
-  useEffect(() => {
-    getRecipes();
-  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -24,6 +21,10 @@ const App = () => {
     setRecipes(data.hits);
     console.log(data.hits)
   };
+  
+  useEffect(() => {
+    getRecipes();
+  }, [query]);
 
   const updateSearch = e => {
     setSearch(e.target.value);
