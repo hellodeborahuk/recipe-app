@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
 import { FaSearch } from "react-icons/fa";
+import { GiKnifeFork } from "react-icons/gi";
 
 const App = () => {
   const appId = "fff36917";
@@ -37,7 +38,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="header">Recipe Search</h1>
+      <h1 className="header">
+        Recipe Search <GiKnifeFork />
+      </h1>
       <form onSubmit={getSearch} className="search-form">
         <input
           type="text"
