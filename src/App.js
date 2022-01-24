@@ -6,7 +6,7 @@ import { GiKnifeFork } from "react-icons/gi";
 
 const App = () => {
   const appId = "fff36917";
-  const appKey = "35acc3180a5f19c4cf4a1312ccf60b9e";
+  const appKey = `${process.env.REACT_APP_RECIPE_API_KEY}`;
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
