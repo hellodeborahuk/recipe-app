@@ -24,7 +24,7 @@ const App = () => {
     };
 
     getRecipes();
-  }, [query]);
+  }, [query, appKey]);
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
